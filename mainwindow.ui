@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Hospital Management System</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* --- Add QSS code here --- */</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">/* --- Thor Theme QSS --- */
+
+/* Main Window &amp; Central Widget */
+QMainWindow, QWidget#centralwidget {
+    background-color: #0D1117;
+}
+
+/* --- Frame --- */
+QWidget#frame
+{
+	background-color: transparent;
+}
+/* --- Sidebar --- */
+QWidget#sidebar {
+    background-color: #161B22;
+	border-radius: 10px;
+}
+QWidget#sidebar QPushButton {
+    background-color: transparent;
+    border: none;
+    color: #E6EDF3;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 5px;
+    text-align: left;
+}
+QWidget#sidebar QPushButton:hover {
+    background-color: #21262D;
+}
+QWidget#sidebar QPushButton:pressed,
+QWidget#sidebar QPushButton:checked {
+    background-color: #00F6FF;
+    color: #0D1117;
+}
+
+/* --- Topbar --- */
+QFrame#topbar {
+    background-color: #161B22;
+}
+QFrame#topbar QPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+}
+QFrame#topbar QPushButton:hover {
+    background-color: #21262D;
+}
+QFrame#topbar QPushButton#close:hover {
+    background-color: #E81123;
+}
+
+/* --- Main Content Area --- */
+QFrame#content, QStackedWidget &gt; QWidget {
+    background-color: #0D1117;
+    border: none;
+}
+
+/* General Page Titles */
+QLabel#pageTitle {
+    color: #E6EDF3;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+/* --- Dashboard Specific Styles --- */
+#homePage .QFrame {
+    background-color: #161B22;
+    border-radius: 12px;
+}
+#homePage QLabel {
+    color: #E6EDF3;
+    font-size: 11pt;
+}
+#homePage #mainChartTitle, #homePage #barChartTitle {
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 5px;
+}
+#homePage QProgressBar {
+    border: 1px solid #21262D;
+    border-radius: 5px;
+    text-align: center;
+    color: #E6EDF3;
+    background-color: #0D1117;
+}
+#homePage QProgressBar::chunk {
+    background-color: #00F6FF;
+    border-radius: 4px;
+}
+#homePage #op1Button, #homePage #op2Button {
+    background-color: #00F6FF;
+    color: #0D1117;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+/* --- Patients &amp; Appointments Page Styles --- */
+#patientsPage QPushButton, #appointmentsPage QPushButton {
+    background-color: #00F6FF;
+    color: #0D1117;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-weight: bold;
+}
+#patientsPage QPushButton:hover, #appointmentsPage QPushButton:hover {
+    background-color: #33fdff;
+}
+
+/* --- Table View --- */
+QTableView {
+    background-color: #161B22;
+    border: 1px solid #21262D;
+    border-radius: 8px;
+    gridline-color: #21262D;
+    color: #E6EDF3;
+}
+QTableView::item {
+    padding: 5px;
+    border-bottom: 1px solid #21262D;
+}
+QTableView::item:selected {
+    background-color: #00F6FF;
+    color: #0D1117;
+}
+QHeaderView::section {
+    background-color: #0D1117;
+    color: #E6EDF3;
+    padding: 5px;
+    border: 1px solid #21262D;
+    font-weight: bold;
+}
+
+/* --- Line Edit (Search Bar) --- */
+QLineEdit {
+    background-color: #0D1117;
+    border: 1px solid #21262D;
+    border-radius: 5px;
+    padding: 8px 10px;
+    color: #E6EDF3;
+}
+QLineEdit:focus {
+    border-color: #00F6FF;
+}
+
+/* --- Calendar Widget --- */
+QCalendarWidget QToolButton {
+    color: #E6EDF3;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+QCalendarWidget QToolButton:hover {
+    background-color: #21262D;
+}
+QCalendarWidget QMenu {
+    background-color: #161B22;
+}
+QCalendarWidget QSpinBox {
+    color: #E6EDF3;
+}
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #161B22;
+    border: 1px solid #21262D;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+}
+QCalendarWidget QAbstractItemView {
+    background-color: #0D1117;
+    color: #E6EDF3;
+    selection-background-color: #00F6FF;
+    selection-color: #0D1117;
+    border: 1px solid #21262D;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+QCalendarWidget QAbstractItemView:disabled {
+    color: #4E535A;
+}
+</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>8</number>
+    </property>
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="rightMargin">
+     <number>8</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="sidebar" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="sidebarLayout">
+       <property name="spacing">
+        <number>8</number>
+       </property>
+       <property name="leftMargin">
+        <number>8</number>
+       </property>
+       <property name="topMargin">
+        <number>8</number>
+       </property>
+       <property name="rightMargin">
+        <number>8</number>
+       </property>
+       <property name="bottomMargin">
+        <number>8</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="toggleButton">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Hospital</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/img/health.png</normaloff>:/img/health.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="homeButton">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Dashboard</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/img/Dashboard.png</normaloff>:/img/Dashboard.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="patientsButton">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Patients</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/img/Patients.png</normaloff>:/img/Patients.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="appointmentsButton">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Appointments</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/img/Appointments.png</normaloff>:/img/Appointments.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="settingsButton">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Settings</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/img/Settings.png</normaloff>:/img/Settings.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="topbar">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/img/minus.svg</normaloff>:/img/minus.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/img/maximize.svg</normaloff>:/img/maximize.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="close">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/img/x.svg</normaloff>:/img/x.svg</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="content">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QStackedWidget" name="contentStackWidget">
+            <property name="currentIndex">
+             <number>2</number>
+            </property>
+            <widget class="QWidget" name="homePage">
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <layout class="QGridLayout" name="statsGrid">
+                <item row="0" column="0" colspan="2">
+                 <widget class="QFrame" name="mainChartFrame">
+                  <layout class="QVBoxLayout" name="mainChartLayout">
+                   <item>
+                    <layout class="QHBoxLayout">
+                     <item>
+                      <widget class="QLabel" name="mainChartTitle">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00f6ff;&quot;&gt;450&lt;/span&gt; New Patients&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer>
+                       <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="op1Button">
+                       <property name="text">
+                        <string>OP1</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="op2Button">
+                       <property name="text">
+                        <string>OP2</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QGraphicsView" name="mainChartPlaceholder">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="0" column="2" colspan="2">
+                 <widget class="QFrame" name="barChartFrame">
+                  <layout class="QVBoxLayout" name="barChartLayout">
+                   <item>
+                    <widget class="QLabel" name="barChartTitle">
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00f6ff;&quot;&gt;⭐ 690&lt;/span&gt; Consultations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QGraphicsView" name="barChartPlaceholder">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QFrame" name="donutChartFrame">
+                  <layout class="QVBoxLayout" name="verticalLayout_5">
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; color:#00f6ff;&quot;&gt;⬡ 790&lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt; Departments&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QGraphicsView" name="donutChartPlaceholder">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QFrame" name="verticalBarFrame">
+                  <layout class="QVBoxLayout" name="verticalLayout_6">
+                   <item>
+                    <widget class="QLabel" name="label_2">
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; color:#00f6ff;&quot;&gt;⚙ 890&lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt; Doctors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QGraphicsView" name="verticalBarPlaceholder">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="1" column="2" colspan="2">
+                 <widget class="QFrame" name="progressFrame">
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <item>
+                    <widget class="QLabel" name="label_3">
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; color:#00f6ff;&quot;&gt;☰ 390&lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt; Beds Available&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QProgressBar" name="progressBar">
+                     <property name="value">
+                      <number>50</number>
+                     </property>
+                     <property name="format">
+                      <string>Emergency</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QProgressBar" name="progressBar_2">
+                     <property name="value">
+                      <number>20</number>
+                     </property>
+                     <property name="format">
+                      <string>ICU</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QProgressBar" name="progressBar_3">
+                     <property name="value">
+                      <number>30</number>
+                     </property>
+                     <property name="format">
+                      <string>Surgery</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="patientsPage">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QLabel" name="pageTitle">
+                <property name="text">
+                 <string>Patients Management</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QPushButton" name="addPatientButton">
+                  <property name="text">
+                   <string>Add New Patient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="searchLineEdit">
+                  <property name="placeholderText">
+                   <string>Search Patients by Name or ID...</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTableView" name="patientsTableView"/>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="appointmentsPage">
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="pageTitle">
+                <property name="text">
+                 <string>Appointments Schedule</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <property name="spacing">
+                 <number>12</number>
+                </property>
+                <item>
+                 <widget class="QCalendarWidget" name="calendarWidget">
+                  <property name="locale">
+                   <locale language="English" country="FalklandIslands"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                  <item>
+                   <widget class="QLabel" name="label_6">
+                    <property name="styleSheet">
+                     <string notr="true">font-size: 14pt; font-weight: bold;</string>
+                    </property>
+                    <property name="text">
+                     <string>Appointments</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QTableView" name="appointmentsTableView"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="addAppointmentButton">
+                    <property name="text">
+                     <string>New Appointment</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Policy::Expanding</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>0</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

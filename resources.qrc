@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/maximize.svg</file>
+        <file>img/minus.svg</file>
+        <file>img/x.svg</file>
+        <file>img/Appointments.png</file>
+        <file>img/Dashboard.png</file>
+        <file>img/Patients.png</file>
+        <file>img/Settings.png</file>
+        <file>img/health.png</file>
+        <file>img/cursor.png</file>
+    </qresource>
+</RCC>
