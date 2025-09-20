@@ -36,4 +36,4 @@ If you are interested in leveling up your skills in software development and sec
 ### 📫 Get In Touch
 
 - **YouTube:** [youtube.com/@Wentuma](https://www.youtube.com/@Wentuma)
-- **GitHub:** [github.com/wweriuma](https://github.com/wweriuma)
+- **GitHub:** [github.com/wweriuma](https://github.com/wwentuma-ship-it)
