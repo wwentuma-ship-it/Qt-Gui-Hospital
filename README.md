@@ -6,6 +6,16 @@ My goal is to share knowledge and help other developers by creating in-depth tec
 
 ---
 
+### 🚀 My Featured Project: Qt GUI Hospital Management
+
+Check out the demonstration of my hospital management system UI built with C++ and the Qt framework.
+
+[![Hospital Management System UI Preview](https://i.ytimg.com/vi/qkF8-8vZ6CM/hqdefault.jpg)](https://www.youtube.com/watch?v=qkF8-8vZ6CM)
+
+**[Click here to watch the full video on YouTube](https://www.youtube.com/watch?v=qkF8-8vZ6CM)**
+
+---
+
 ### 📺 My YouTube Channel: [Wentuma](https://www.youtube.com/@Wentuma)
 
 On my YouTube channel, I dive deep into the world of software development and cybersecurity. I create tutorials and detailed explanations on topics that are crucial for modern developers.
@@ -36,4 +46,4 @@ If you are interested in leveling up your skills in software development and sec
 ### 📫 Get In Touch
 
 - **YouTube:** [youtube.com/@Wentuma](https://www.youtube.com/@Wentuma)
-- **GitHub:** [github.com/wweriuma](https://github.com/wwentuma-ship-it)
+- **GitHub:** [github.com/wwentuma-ship-it](https://github.com/wwentuma-ship-it)
